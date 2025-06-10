@@ -1,0 +1,10 @@
+[Unit]
+Description=Set Battery Charge Threshold
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/fish -c 'echo 80 > /sys/class/power_supply/BAT1/charge_control_end_threshol'
+
+[Install]
+WantedBy=multi-user.target
